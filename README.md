@@ -24,7 +24,36 @@ A list of multi-source sentiment words is collected from the general sentiment v
 
 
 ### 3.2 Sentiment term classification
-To classify extracted terms, the knowledge base of the adjusted DUTIR was resorted to label domain term classes to start deep learning. The word knowledge of each term (term definitions, synonyms, and associative words) is integrated to augment the term embedding. We used BiLSTM-Attention to train the classication model. After obtaining the optimal model, the unannotated terms are predicted by the model via hierarchical supervised classification according to the term class structure of the adjusted DUTIR. The predicted terms are finally merged into the annotated terms to construct a hierarchical sentiment lexicon.
+To classify extracted terms, the knowledge base of the adjusted DUTIR was resorted to label domain term classes to start deep learning. The adjusted DUTIR is as follows.
+
+First class|Second class|Third class
+|------|---|---|
+|positive|pleasure|joy (PA)
+|positive|pleasure|ease (PE)
+|positive|favour|praise (PD/PH)
+|positive|favour|like (PB)
+|positive|favour|faith (PG)
+|positive|favour|wish (PK)
+|positive|surprise|surprise (PC)
+|negative|sadness|fear (NI/NC)
+|negative|sadness|sorrow (NB/NJ)
+|negative|sadness|guilt (NG/NH)
+|negative|sadness|miss (PF)
+|negative|disgust|criticize (NN/ND/NK)
+|negative|disgust|anger (NA)
+|negative|disgust|vexed (NE)
+|negative|disgust|misgive (NL)
+
+The main changes included the following: 
+- the meaning of “respect” in classical poetry is that someone holds another in high esteem or certainty, which can be considered as a type of admiration; thus, it was merged into the class of “praise.”
+- both “fear” and “panic” essentially represent a sad feeling of fright, so they were included in the subordinate class of “sadnes.”
+- considering that “sorrow” and “disappoint” share a coincident emotion of heart suffering, they were combined.
+- “guilt” and “ashamed” have the same connotation of self-reproach, so they were integrated to form the class of “guilt.”
+- because “criticize”, “abhor,” and “envy” all contain the meaning of reproach, they were united into the class of “criticize.”
+- the class “anger” in classical poetry often express one’s indignation of concrete objects; thus, it was moved to the subordinate class of “disgust.” 
+- because “surprise” mainly contains an unexpected happiness in poetry domain and existing work mostly dealt it as positive emotion, it was further incorporated with “pleasure” and “favour” to form the first class of “positive,” and the other second classes of “disgust” and “sadness” formed the first class of “negative.” 
+
+Then the word knowledge of each term (term definitions, synonyms, and associative words) is integrated to augment the term embedding. We used BiLSTM-Attention to train the classication model. After obtaining the optimal model, the unannotated terms are predicted by the model via hierarchical supervised classification according to the term class structure of the adjusted DUTIR. The predicted terms are finally merged into the annotated terms to construct a hierarchical sentiment lexicon.
 
 
 |Class|Macro_P (%)|Macro_R (%)|Macro_F1 (%)|Acc (%)|
