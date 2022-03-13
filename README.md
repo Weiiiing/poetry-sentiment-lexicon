@@ -24,7 +24,35 @@ A list of multi-source sentiment words is collected from the general sentiment v
 
 
 ### 3.2 Sentiment term classification
-To classify extracted terms, the knowledge base of the adjusted DUTIR was resorted to label domain term classes to start deep learning. The adjusted DUTIR is as follows.
+To classify extracted terms, the knowledge base of the adjusted DUTIR was resorted to label domain term classes to start deep learning. 
+
+The original DUTIR is as follows:
+
+|Class|Subclass
+|------|---|
+|pleasure|joy (PA)|
+|pleasure|ease (PE)|
+|favour|respect (PD)|
+|favour|praise (PH)|
+|favour|faith (PG)|
+|favour|like (PB)|
+|favour|wish (PK)|
+|surprise|surprise (PC)|
+|sadness|sorrow (NB)|
+|sadness|disappoint (NJ)|
+|sadness|guilt (NH)|
+|sadness|miss (PF)|
+|fear|panic (NI)|
+|fear|fear (NC)|
+|fear|ashamed (NG)|
+|disgust|criticize (NN)|
+|disgust|abhor (ND)|
+|disgust|envy (NK)|
+|disgust|vexed (NE)|
+|disgust|misgive(NL)|
+|anger|anger (NA)|
+
+The adjusted DUTIR is as follows.
 
 First class|Second class|Third class
 |------|---|---|
