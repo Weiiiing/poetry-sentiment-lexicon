@@ -24,7 +24,7 @@ A list of multi-source sentiment words is collected from the general sentiment v
 
 
 ### 3.2 Sentiment term classification
-To classify extracted terms, the knowledge base of the adjusted DUTIR was resorted to label domain term classes to start deep learning. 
+To classify extracted terms and make it adaptative to the poetry domain, the knowledge base of the adjusted DUTIR was resorted to label domain term classes to start deep learning. 
 
 The original DUTIR is as follows:
 
