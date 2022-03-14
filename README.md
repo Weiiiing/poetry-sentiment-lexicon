@@ -81,18 +81,18 @@ The main changes included the following:
 - the class “anger” in classical poetry often express one’s indignation of concrete objects; thus, it was moved to the subordinate class of “disgust.” 
 - because “surprise” mainly contains an unexpected happiness in poetry domain and existing work mostly dealt it as positive emotion, it was further incorporated with “pleasure” and “favour” to form the first class of “positive,” and the other second classes of “disgust” and “sadness” formed the first class of “negative.” 
 
-Then the word knowledge of each term (term definitions, synonyms, and associative words) is integrated to augment the term embedding. We used BiLSTM-Attention to train the classication model. After obtaining the optimal model, the unannotated terms are predicted by the model via hierarchical supervised classification according to the term class structure of the adjusted DUTIR. The predicted terms are finally merged into the annotated terms to construct a hierarchical sentiment lexicon.
+Then the word knowledge of each term (term definitions, synonyms, and associative words) is integrated to augment the term embedding. The pre-trained BERT model was used to extract the feature vector of the augmented text. Then we used BiLSTM-Attention to train the classication model. After obtaining the optimal model, the unannotated terms are predicted by the model via hierarchical supervised classification according to the term class structure of the adjusted DUTIR. The predicted terms are finally merged into the annotated terms to construct a hierarchical sentiment lexicon.
 
 
-|Class|Macro_P (%)|Macro_R (%)|Macro_F1 (%)|Acc (%)|
-|------|---|---|---|---|
-|total(8081)|91.55|91.19|91.23|91.38|
-|positive(4513)|81.67|68.37|73.4|89.16|
-|negative(3568)|82.99|80.03|81.11|85.03|
-|pleasure(733)|81.22|78.6|79.58|85.26|
-|favour(3707)|68.61|45.38|50.63|85.32|
-|sadness(1049)|84.03|76.52|79.07|85.04|
-|disgust(2519)|79.5|60|65.72|86.18|
+|Superclass|Subclass|Macro_P (%)|Macro_R (%)|Macro_F1 (%)|Acc (%)|
+|------|---|---|---|---|---|
+|total(8081)|positive/negative|91.55|91.19|91.23|91.38|
+|positive(4513)|pleasure/favour/surprise|81.67|68.37|73.4|89.16|
+|negative(3568)|sadness/disgust|82.99|80.03|81.11|85.03|
+|pleasure(733)|joy/ease|81.22|78.6|79.58|85.26|
+|favour(3707)|praise/like/faith/wish|68.61|45.38|50.63|85.32|
+|sadness(1049)|fear/sorrow/guilt/miss|84.03|76.52|79.07|85.04|
+|disgust(2519)|criticize/anger/vexed/misgive|79.5|60|65.72|86.18|
 
 
 ## 4. FCCPSL structure
