@@ -17,7 +17,7 @@ A sentiment lexicon in classical Chinese poetry domain constructed by deep learn
 A list of multi-source sentiment words is collected from the general sentiment vocabularies and related domains to form the knowledge base. Next, the sentiment words are used to match the terms in the domain text, and the annotated text is then mapped to a character labeling sequence. Next, the BERT model is used to realize Chinese character embedding, after which the emotion radical (ER) features of Chinese characters are incorporated to extend the BERT vector to boost semantic information. The enhanced vector is input into a neural network to predict the labels of sequences to extract sentiment terms. The extracted terms include domain terms in the original vocabularies and unregistered terms predicted by the model. The results are as follows:
 
 
-|feature|P(%)|R(%)|F1(%)|Labeled|Recognized|Correct|  
+|Feature|P(%)|R(%)|F1(%)|Labeled|Recognized|Correct|  
 |------|---|---|---|---|---|---|
 |BERT|96.31|95.60|95.95|60225|59780|57574|
 |BERT+ER|96.29|95.89|96.09|60225|59977|57750|
@@ -28,7 +28,7 @@ To classify extracted terms and make it adaptative to the poetry domain, the kno
 
 The original DUTIR is as follows:
 
-|Class|Subclass
+|Class|Subclass|
 |------|---|
 |pleasure|joy (PA)|
 |pleasure|ease (PE)|
@@ -102,7 +102,7 @@ The FCCPSL with a three-layer hierarchy and 14,368 terms was built.
 
 Detailed information of the third-layer class:
 
-|class|term number|  
+|Class|Term number|  
 |------|---|
 |praise |5582|
 |like |658|
