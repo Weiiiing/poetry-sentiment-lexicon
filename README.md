@@ -1,5 +1,7 @@
 # poetry-sentiment-lexicon
-A sentiment lexicon in classical Chinese poetry domain constructed by deep learning
+A sentiment lexicon in classical Chinese poetry domain constructed by deep learning.
+
+This work has formed an academic article entitled _"A Method of Constructing a Fine-grained Sentiment Lexicon for the Humanities Computing of Classical Chinese Poetry"_ and has been accepted for **_Neural Computing and Applications_**.
 
 ## 1. Introduction
 - Based on a corpus of “Appreciation Dictionary of Tang Poetry”, a poetry sentiment lexicon is constructed by combining supervised sentiment term extraction (entity recognition) and sentiment term classification (text classification). 
